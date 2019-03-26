@@ -1,0 +1,107 @@
+.app-header{
+    background-image: linear-gradient(to left, rgb(100, 97, 238), rgb(117, 165, 221), rgb(149, 212, 248));
+    margin: 20px auto;
+    width: 45%;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 2px 3px rgb(121, 120, 120);
+}
+
+.app-header h2{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px;
+}
+
+/* form css */
+.form-div{
+    margin: 30px auto;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 2px 3px #ccc;
+    border: 1px solid #eee;
+    padding: 20px 30px 20px 30px;
+    box-sizing: border-box
+}
+
+.form-div input {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    outline: none;
+    border-bottom: 3px solid rgb(117, 165, 221);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 10px;
+    text-indent: 15px;
+    background-color: white;
+    font: inherit;
+    color: rgb(79, 85, 85);
+    font-size: 18px;
+    display: block;
+}
+
+.form-div input::-webkit-input-placeholder{
+    color: rgb(221, 219, 219);;
+}
+
+.form-div button {
+    width: 100%;
+    background-image: linear-gradient(to left, rgb(100, 97, 238), rgb(117, 165, 221), rgb(149, 212, 248));
+    border: none;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin: 10px auto;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 600
+}
+
+.form-div button:hover{
+    background-image: linear-gradient(to left, rgb(149, 212, 248), rgb(117, 165, 221),rgb(100, 97, 238));
+}
+
+.form-div label{
+    color: rgb(185, 180, 180);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 17px;
+    float: left;
+}
+
+.form-div input:focus {
+    outline: none;
+    border-bottom: 3px solid rgb(112, 112, 112);
+}
+
+.calendar {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.success-alert{
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    text-align: center
+}   
+
+.app-list{
+    width:70%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.app-list h3{
+    font-weight: 600;
+}
+
+@media (min-width: 600px) {
+    .form-div{
+        width: 45%;
+    }
+}
