@@ -20,14 +20,13 @@ class AppointmentsController extends Controller
         foreach($appointments as $key => $appointment){
             $appointment_list[] = Calendar::event( 
                 $appointment->title ."\r\n[". Utilities::prettyTime($appointment->start_time)." - ". Utilities::prettyTime($appointment->end_time)."]",
-                true,
-                new \DateTime($appointment->date),
-                new \DateTime($appointment->date.' +1 day'),
+                false,
+                new \DateTime($appointment->date.' '.$appointment->start_time),
+                new \DateTime($appointment->date.' '.$appointment->end_time),
                 null,
                 [
                     'color' => 'blue',
                     'textColor' => '#fff',
-                    'description' => $appointment->start_time.' - '.$appointment->end_time
                 ]
             );
         }
@@ -41,7 +40,7 @@ class AppointmentsController extends Controller
 
     public function store(Request $request){
         if($request['start_time'] > $request['end_time']){
-            \Session::flash('warning', 'Start time cannot be greater than en time');
+            \Session::flash('warning', 'Start time cannot be greater than end time');
             return Redirect::to('/appointments/create');
         }
         $validator = Validator::make($request->all(), [
@@ -51,7 +50,6 @@ class AppointmentsController extends Controller
             'end_time' => 'required',
         ]);
         if ($validator->fails()){
-            var_dump($request);
             \Session::flash('warning', 'Please enter the valid details');
             return Redirect::to('/appointments/create')->withInput()->withErrors($validator);
         }

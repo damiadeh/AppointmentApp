@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if (Session::has('success')) 
+        <div class="alert alert-success text-center success-alert">{{ Session::get('success')}}</div>
+@endif
 <div class="app-list">
     <h3>List of Appointments</h3>
 </div>

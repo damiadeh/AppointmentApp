@@ -13,10 +13,10 @@
 
 
 
-Route::get('appointments', 'AppointmentsController@index')->name('appointments.index')->middleware('auth');
-Route::get('appointments/create', 'AppointmentsController@create')->name('appointments.create')->middleware('auth');
-Route::get('appointments/list', 'AppointmentsController@list')->name('appointments.list')->middleware('auth');
-Route::post('appointments', 'AppointmentsController@store')->name('appointments.store')->middleware('auth');
+Route::get('/appointments', 'AppointmentsController@index')->name('appointments.index')->middleware('auth');
+Route::get('/appointments/create', 'AppointmentsController@create')->name('appointments.create')->middleware('auth');
+Route::get('/appointments/list', 'AppointmentsController@list')->name('appointments.list')->middleware('auth');
+Route::post('/appointments', 'AppointmentsController@store')->name('appointments.store')->middleware('auth');
 Auth::routes();
 
 Route::get('/', function () {

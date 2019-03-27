@@ -23,4 +23,8 @@ class AppointmentHelper
           
       }
 
+      public static function getAppointmentById($id){
+        return Appointments::findOrFail($id);
+      }
+
 }
